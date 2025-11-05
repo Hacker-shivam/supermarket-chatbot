@@ -145,19 +145,19 @@ def generate_db_answer(user_question, db_schema):
 # --- Streamlit Frontend Setup ---
 
 st.set_page_config(
-    page_title="Gemini SQL Chatbot",
+    page_title="Supermarket Analysis Chatbot",
     page_icon="🤖"
 )
 
-st.title("🤖 Single-File Gemini-Powered SQL Chatbot")
-st.caption("Now running entirely on Streamlit! Ask questions about the database in natural language.")
+st.title("🤖 Supermarket Chatbot")
+st.caption("Ask questions about the supermarket data !")
 
 # Get the database schema once
 DB_SCHEMA = get_db_schema()
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "assistant", "content": "Hello! I can answer questions by querying the database. What would you like to know?"}
+        {"role": "assistant", "content": "Hello, Sir/ Ma'am ! I can answer your questions by querying the database. What would you like to know?"}
     ]
 
 # Display all previous messages in the chat history
@@ -174,7 +174,7 @@ if prompt := st.chat_input("Enter your question..."):
 
     # 2. Generate the full answer using the core function
     with st.chat_message("assistant"):
-        with st.spinner("Thinking... (Generating SQL and querying the database)"):
+        with st.spinner("Thinking... (Generating answer from database)"):
             answer = generate_db_answer(prompt, DB_SCHEMA)
             
             # Display the final answer
