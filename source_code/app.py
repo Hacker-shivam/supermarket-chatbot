@@ -191,4 +191,4 @@ else:
     st.sidebar.success("Database Schema Loaded Successfully!")
     st.sidebar.expander("View Schema").code(DB_SCHEMA, language='text')
 
-st.sidebar.info("Tip: For production, store your `GEMINI_API_KEY` and `DATABASE_URL` securely using Streamlit Secrets.")
+st.sidebar.info("Credit - This Project is made by Shivam Saurabh under the guidance of Amar Singh for Simplify3x Software pvt ltd.")
